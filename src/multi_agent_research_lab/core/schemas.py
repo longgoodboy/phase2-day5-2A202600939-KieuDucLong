@@ -27,6 +27,7 @@ class AgentResult(BaseModel):
 
 
 class SourceDocument(BaseModel):
+    source_id: str | None = None
     title: str
     url: str | None = None
     snippet: str
@@ -35,7 +36,15 @@ class SourceDocument(BaseModel):
 
 class BenchmarkMetrics(BaseModel):
     run_name: str
+    mode: str | None = None
+    query: str = ""
     latency_seconds: float
     estimated_cost_usd: float | None = None
     quality_score: float | None = Field(default=None, ge=0, le=10)
+    citation_coverage: float | None = Field(default=None, ge=0, le=1)
+    failure: bool = False
+    trace_completeness: float | None = Field(default=None, ge=0, le=1)
+    route_count: int = 0
+    source_count: int = 0
+    answer_length: int = 0
     notes: str = ""

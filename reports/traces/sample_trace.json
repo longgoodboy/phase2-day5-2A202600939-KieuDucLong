@@ -1,0 +1,165 @@
+{
+  "query": "What are the trade-offs of using multi-agent systems for research assistants?",
+  "route_history": [
+    "researcher",
+    "analyst",
+    "writer",
+    "critic",
+    "done"
+  ],
+  "validated": true,
+  "citation_coverage": 1.0,
+  "errors": [],
+  "trace": [
+    {
+      "timestamp": "2026-06-24T14:53:06.385290+00:00",
+      "agent": "supervisor",
+      "event": "routed",
+      "input_summary": "sources=0, has_analysis=False, has_answer=False, validated=False",
+      "output_summary": "next_route=researcher",
+      "latency_seconds": 0.0,
+      "tokens": {
+        "input": 0,
+        "output": 0
+      },
+      "cost_usd": 0.0,
+      "errors": [],
+      "metadata": {
+        "route": "researcher",
+        "iteration": 1
+      }
+    },
+    {
+      "timestamp": "2026-06-24T14:53:06.385290+00:00",
+      "agent": "researcher",
+      "event": "completed",
+      "input_summary": "What are the trade-offs of using multi-agent systems for research assistants?",
+      "output_summary": "created 5 sources and research notes",
+      "latency_seconds": 0.0005333999999947991,
+      "tokens": {
+        "input": 0,
+        "output": 0
+      },
+      "cost_usd": 0.0,
+      "errors": [],
+      "metadata": {}
+    },
+    {
+      "timestamp": "2026-06-24T14:53:06.385290+00:00",
+      "agent": "supervisor",
+      "event": "routed",
+      "input_summary": "sources=5, has_analysis=False, has_answer=False, validated=False",
+      "output_summary": "next_route=analyst",
+      "latency_seconds": 0.0,
+      "tokens": {
+        "input": 0,
+        "output": 0
+      },
+      "cost_usd": 0.0,
+      "errors": [],
+      "metadata": {
+        "route": "analyst",
+        "iteration": 2
+      }
+    },
+    {
+      "timestamp": "2026-06-24T14:53:06.386284+00:00",
+      "agent": "analyst",
+      "event": "completed",
+      "input_summary": "5 research note lines",
+      "output_summary": "created 3 key claims plus trade-offs",
+      "latency_seconds": 8.870000010574586e-05,
+      "tokens": {
+        "input": 0,
+        "output": 0
+      },
+      "cost_usd": 0.0,
+      "errors": [],
+      "metadata": {}
+    },
+    {
+      "timestamp": "2026-06-24T14:53:06.386284+00:00",
+      "agent": "supervisor",
+      "event": "routed",
+      "input_summary": "sources=5, has_analysis=True, has_answer=False, validated=False",
+      "output_summary": "next_route=writer",
+      "latency_seconds": 0.0,
+      "tokens": {
+        "input": 0,
+        "output": 0
+      },
+      "cost_usd": 0.0,
+      "errors": [],
+      "metadata": {
+        "route": "writer",
+        "iteration": 3
+      }
+    },
+    {
+      "timestamp": "2026-06-24T14:53:06.386284+00:00",
+      "agent": "writer",
+      "event": "completed",
+      "input_summary": "analysis_present=True",
+      "output_summary": "answer_length=626",
+      "latency_seconds": 0.0005148999998709769,
+      "tokens": {
+        "input": 379,
+        "output": 89
+      },
+      "cost_usd": 0.00011,
+      "errors": [],
+      "metadata": {}
+    },
+    {
+      "timestamp": "2026-06-24T14:53:06.386284+00:00",
+      "agent": "supervisor",
+      "event": "routed",
+      "input_summary": "sources=5, has_analysis=True, has_answer=True, validated=False",
+      "output_summary": "next_route=critic",
+      "latency_seconds": 0.0,
+      "tokens": {
+        "input": 0,
+        "output": 0
+      },
+      "cost_usd": 0.0,
+      "errors": [],
+      "metadata": {
+        "route": "critic",
+        "iteration": 4
+      }
+    },
+    {
+      "timestamp": "2026-06-24T14:53:06.387286+00:00",
+      "agent": "critic",
+      "event": "completed",
+      "input_summary": "answer_present=True citations=['S1', 'S2', 'S3']",
+      "output_summary": "validated=True coverage=1.0",
+      "latency_seconds": 0.0003087000000050466,
+      "tokens": {
+        "input": 0,
+        "output": 0
+      },
+      "cost_usd": 0.0,
+      "errors": [],
+      "metadata": {}
+    },
+    {
+      "timestamp": "2026-06-24T14:53:06.387286+00:00",
+      "agent": "supervisor",
+      "event": "routed",
+      "input_summary": "sources=5, has_analysis=True, has_answer=True, validated=True",
+      "output_summary": "next_route=done",
+      "latency_seconds": 0.0,
+      "tokens": {
+        "input": 0,
+        "output": 0
+      },
+      "cost_usd": 0.0,
+      "errors": [],
+      "metadata": {
+        "route": "done",
+        "iteration": 5
+      }
+    }
+  ]
+}
